@@ -6,7 +6,7 @@
 .pnp.js
 yarn.lock
 package-lock.json
-
+.env
 # testing
 /coverage
 
@@ -33,6 +33,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
 
 # vercel
 .vercel
