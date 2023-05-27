@@ -12,20 +12,11 @@ dotenv.config();
 
 conectarDB();
 
-const dominiosPermitidos = ['https://proyecto-seven-xi.vercel.app/'];
+const dominiosPermitidos = ['http://localhost:3000'];
 
 const corsOptions = {
-    origin: function(origin, callback) {
-        if (dominiosPermitidos.indexOf(origin) !== -1) {
-            //El origen del request esta permitido
-            console.log('ok');
-            callback(null, true);
-        }
-        else {
-            callback(null, true);
-        }
-    },
-}
+    origin: 'https://proyecto-seven-xi.vercel.app',
+  };
 
 app.use(cors(corsOptions))
 
