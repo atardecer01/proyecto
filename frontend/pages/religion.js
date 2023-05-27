@@ -7,15 +7,15 @@ import Image from "next/image";
 import Base from "@layouts/Baseof";
 import { FaInfoCircle } from 'react-icons/fa';
 const Religion = ({
-   
+
   }) => {
-  
-    
-   
-  
+
+
+
+
     return (
-        <Base title={"Categorias Aztecas"}>
-            
+       /* <Base title={"Categorias Aztecas"}>
+
         <section className="section pt-0">
         {markdownify(
             " Religión",
@@ -40,12 +40,13 @@ const Religion = ({
     <MasInformacion />
     </section>
 
-</Base>
+</Base>*/
+<h1>hola mundo</h1>
     );
   };
-  
+
   export default Religion;
-  
+
   // for homepage data
   const MasInformacion = () => {
     return (
