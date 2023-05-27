@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
-import generarId from '../helpers/generarId.js'
 
 const usuarioSchema = mongoose.Schema({
     nombre:  String,
