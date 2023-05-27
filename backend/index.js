@@ -12,7 +12,7 @@ dotenv.config();
 
 conectarDB();
 
-/*const dominiosPermitidos = ['http://localhost:3000'];
+const dominiosPermitidos = ['http://localhost:3000'];
 
 const corsOptions = {
     origin: function(origin, callback) {
@@ -27,7 +27,7 @@ const corsOptions = {
     },
 }
 
-app.use(cors(corsOptions))*/
+app.use(cors(corsOptions))
 
 app.use("/api/usuarios", usuarioRoutes);
 
