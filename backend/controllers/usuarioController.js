@@ -54,6 +54,7 @@ const confirmar = async (req, res) => {
 };
 
 const autenticar = async(req, res) => {
+    
     const {email, password} = req.body
 
     //Comprobar si el usuario existe
@@ -77,7 +78,7 @@ const autenticar = async(req, res) => {
         //return res.json('no');
         res.status(400).json('no');
         //return res.status(403).json({msg: error.message});
-    }
+    }res.send("estas en el login")
 };
 
 const olvidePassword = async (req, res) => {
