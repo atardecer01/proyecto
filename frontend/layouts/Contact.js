@@ -40,26 +40,37 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-      try {
-        const url = "https://backend-three-blue.vercel.app/api/login"
-        const respuesta = await axios.post(url, { email, password });
-        const condition = respuesta.data === "ok";
+    try {
+      const url = "https://backend-three-blue.vercel.app/api/login";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const condition = data === "ok";
         console.log(condition);
 
         if (condition) {
           setLinkHref("/categories");
-
           window.location.href = "/categories";
         } else {
           setLinkHref("/contact");
           handleIncorrectCredentials();
-
-
         }
-      } catch (error) {
-        console.log(error);
+      } else {
+        // Manejar el caso cuando la respuesta no es exitosa (por ejemplo, un código de estado 404 o 500)
+        console.log("Error en la solicitud");
       }
-    };
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   return (
     <div className="w-full h-screen flex items-start">
