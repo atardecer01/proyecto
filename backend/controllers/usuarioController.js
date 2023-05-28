@@ -60,19 +60,22 @@ const autenticar = async(req, res) => {
     const usuario = await Usuario.findOne({email});
     console.log(usuario);
     if (!usuario) {
-        const error = new Error('El usuario no existe');
-        return res.status(404).json({msg: error.message});
+        //const error = new Error('El usuario no existe');
+        //return res.status(404).json({msg: error.message});
+        res.status(401).json('Credenciales inválidas');
     }
 
     //Revisar Password
     if (usuario.password === password) {
         // Autenticar
         
-        res.json('ok');
+        //res.json('ok');
+        res.status(200).json('ok');
     }
     else {
-        const error = new Error('El password es incorrecto');
-        return res.json('no');
+        //const error = new Error('El password es incorrecto');
+        //return res.json('no');
+        res.status(400).json('no');
         //return res.status(403).json({msg: error.message});
     }
 };

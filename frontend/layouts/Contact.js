@@ -37,6 +37,7 @@ const Contact = () => {
     alert("Credenciales incorrectas");
   };
 
+  const localll= "http://localhost:4000/api/login";
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -50,7 +51,7 @@ const Contact = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      if (response.ok) {
+
         const data = await response.json();
         const condition = data === "ok";
         console.log(condition);
@@ -62,10 +63,7 @@ const Contact = () => {
           setLinkHref("/contact");
           handleIncorrectCredentials();
         }
-      } else {
-        // Manejar el caso cuando la respuesta no es exitosa (por ejemplo, un código de estado 404 o 500)
-        console.log("Error en la solicitud");
-      }
+
     } catch (error) {
       console.log(error);
     }
