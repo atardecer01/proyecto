@@ -18,7 +18,7 @@ const corsOptions = {
     origin: ['https://proyecto-seven-xi.vercel.app', 'https://proyecto-ij8terunr-atardecer01-s-team.vercel.app',dominiosPermitidos]
   };
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.use("/api", usuarioRoutes);
 
