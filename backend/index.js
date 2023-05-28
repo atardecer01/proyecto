@@ -15,7 +15,7 @@ conectarDB();
 const dominiosPermitidos = ['http://localhost:3000'];
 
 const corsOptions = {
-    origin: ['https://proyecto-seven-xi.vercel.app', 'https://proyecto-ij8terunr-atardecer01-s-team.vercel.app',dominiosPermitidos],
+    origin: ['https://front-topaz-beta.vercel.app/',dominiosPermitidos],
     methods: ["GET","POST"]
   };
 
