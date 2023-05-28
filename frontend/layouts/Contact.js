@@ -42,7 +42,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const url = "https://back-wheat.vercel.app/api/login";
+      const url = "https://happy-fly-loincloth.cyclic.app/api/login";
       const response = await fetch(url, {
         method: "POST",
         headers: {
