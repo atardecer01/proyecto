@@ -37,38 +37,29 @@ const Contact = () => {
     alert("Credenciales incorrectas");
   };
 
-  const localll= "http://localhost:4000/api/login";
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const url = "https://happy-fly-loincloth.cyclic.app/api/login";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-
-        const data = await response.json();
-        const condition = data === "ok";
+      try {
+        const url = "https://happy-fly-loincloth.cyclic.app/api/login"
+        const respuesta = await axios.post(url, { email, password });
+        const condition = respuesta.data === "ok";
         console.log(condition);
 
         if (condition) {
           setLinkHref("/categories");
+
           window.location.href = "/categories";
         } else {
           setLinkHref("/contact");
           handleIncorrectCredentials();
+
+
         }
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
   return (
     <div className="w-full h-screen flex items-start">
